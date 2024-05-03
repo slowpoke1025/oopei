@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<textarea name="" id="str" cols="30" rows="10"></textarea>
+<button id="btn">click</button>
+
+<body>
+
+
+    <script>
+        const btn = document.getElementById("btn")
+        const textarea = document.getElementById("str")
+
+
+        btn.addEventListener("click", e => {
+            const pattern = /\d+\.\d+\.\d+/g
+            const str = textarea.value;
+            const res = str.match(pattern);
+            console.log(res);
+            const arr = {}
+            for (let i of res) {
+                if (arr[i] == null) {
+                    arr[i] = 1
+                } else {
+                    ++arr[i]
+                }
+            }
+            console.log(arr);
+        })
+
+
+    </script>
+</body>
+
+</html>
