@@ -22,16 +22,10 @@
             const pattern = /\d+\.\d+\.\d+/g
             const str = textarea.value;
             const res = str.match(pattern);
-            console.log(res);
-            const arr = {}
-            for (let i of res) {
-                if (arr[i] == null) {
-                    arr[i] = 1
-                } else {
-                    ++arr[i]
-                }
-            }
-            console.log(arr);
+            const list = new Set(res)
+            console.log(list);
+            alert(list.size)
+
         })
 
 
